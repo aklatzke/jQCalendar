@@ -1,0 +1,63 @@
+#calendar{
+	font-family: "Lato";
+}
+
+.month-display{
+	padding: 15px;
+	background-color: #111;
+	color: white;
+}
+
+.calendar-day{
+	display: inline-block;
+	width: 14.2857142857%;
+	height: 100%;
+	text-align: center;
+	background-color: #ccc;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	line-height: 100px;
+}
+
+.calendar-row{
+	display: block;
+}
+
+.calendar-header-node{
+	display: inline-block;
+	width: 14.2857142857%;
+	height: 50px;
+	text-align: center;
+	background-color: #222;
+	color: white;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	line-height: 50px;
+}
+
+.next-calendar{
+	float: right;
+	display: inline-block;
+	margin-top: -20px;
+	cursor: pointer;
+}
+
+.previous-calendar{
+	display: inline-block;
+	cursor: pointer;
+}
+
+.month-year-wrap{
+	margin-left: 550px;
+	font-weight: bold;
+}
+
+.add-event-link{
+	line-height: 39px;
+	font-weight:bold;
+	cursor: pointer;
+}
+
+.add-event-link i{
+	color: green;
+}
