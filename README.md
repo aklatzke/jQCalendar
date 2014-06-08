@@ -65,6 +65,10 @@ In addition, the days are given a `data-day` attribute so that they can be easil
 ``` 
 This would give the fifth day of the month a red background. A forthcoming events library, also on behalf of Schoolboard.io, will leverage this functionality in order to add categorical events and dates to the calendar...
 
+#### Responsiveness
+
+The plugin was designed from the ground up to be responsive friendly, though you may need to change things to fit your specific needs. To quickly turn the calendar responsive, you can use (or tweak) the included CSS file which will make the calendar responsive (but doesn't make any major changes to structure or style so that you can make your own design decisions).
+
 Issues? Bugs? Please use GitHub's built in tracking/wiki.
 
 
