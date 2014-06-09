@@ -69,6 +69,19 @@ This would give the fifth day of the month a red background. A forthcoming event
 
 The plugin was designed from the ground up to be responsive friendly, though you may need to change things to fit your specific needs. To quickly turn the calendar responsive, you can use (or tweak) the included CSS file which will make the calendar responsive (but doesn't make any major changes to structure or style so that you can make your own design decisions).
 
+#### Interaction
+
+This plugin emits events that can be leveraged in order to affect the status of the plugin at various stages. 
+
+The following events are emitted by the calendar:
+
+```
+	next-calendar		:		emitted upon moving forward a month in the calendar
+	previous-calendar	: 		emitted upon moving backwards a month in the calendar
+	render 				: 		the start of the render event
+	calendar-rendered 	: 		the end of the render event
+```
+
 Issues? Bugs? Please use GitHub's built in tracking/wiki.
 
 

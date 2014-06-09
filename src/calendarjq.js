@@ -147,12 +147,11 @@ $(function(){
 			var rowAreaSize = $(window).height() - ($(".calendar-header").position().top + $(".calendar-header").height()),
 				rowCount = $(this).find(".calendar-row").length,
 				rowHeight = rowAreaSize/rowCount;
-			$("document").trigger("calendar-render");
+			$("document").trigger("calendar-rendered");
 			$(this).find(".calendar-row").css("height", rowHeight);
 		})
 
 		selector.html(jQueryCalendar.generateHTML().getHTML()).trigger("render");
-		selector.trigger("calendar-rendered");
 
 		return selector;
 	}
