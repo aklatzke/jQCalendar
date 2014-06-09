@@ -82,6 +82,44 @@ The following events are emitted by the calendar:
 	calendar-rendered 	: 		the end of the render event
 ```
 
-Issues? Bugs? Please use GitHub's built in tracking/wiki.
+Each of these events are triggered on both the `document` and the `element` targeted by jQuery, with the exception of the `render` event. This means that you can set up global events that will fire for each calendar, or target the elements specifically. 
+
+For example:
+
+```javascript
+	$(document).on("calendar-rendered", function(){
+		// fires for each calendar instance
+		console.log("any calendar has been rendered");
+	})
+```
+
+Compared to:
+
+```javascript
+	$("#calendar").on("calendar-rendered", function(){
+		// fires when the #calendar element renders only
+		console.log("#calendar has been rendered");
+	})
+```
+
+The `render` event is used internally by the library, but can also be extended to handle additional rendering you wish to do.
+
+For example:
+
+```javascript
+// Fetch some events that need added to the calendar
+$("#calendar").on("render", function(){
+	$.ajax("/some/url", function(data){
+		$.each(data, function(){
+			.... render the events in the calendar ....
+		})
+	})
+})
+```
+#### Contribution
+
+If you'd like to contribute to the library, feel free to put in a pull request. Any feature-enhancements should be forked and kept in a separate repository in order to keep jQCalendar as simple as possible.
+
+Issues? Bugs? Please use GitHub's built in tracking/wiki. 
 
 
