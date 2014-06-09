@@ -1,7 +1,5 @@
 $(function(){
-	// THANK YOU FOR THE INSPIRATION: http://jszen.blogspot.com/2007/03/how-to-build-simple-calendar-with.html
-	// ATTR:TO "Can't find author"
-
+	// Calendar Object inspired by:  http://jszen.blogspot.com/2007/03/how-to-build-simple-calendar-with.html
 	/* Initial Setup, defaults */
 	 var Days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -135,21 +133,26 @@ $(function(){
 
 		$(document).on("click", ".next-calendar", function(){
 			selector.html(jQueryCalendar.addMonth().generateHTML().getHTML()).trigger("render");
+			selector.trigger("next-calendar");
+			$(document).trigger("next-calendar");
 		})
 
 		$(document).on("click", ".previous-calendar", function(){
 			selector.html(jQueryCalendar.addMonth().generateHTML().getHTML()).trigger("render");
+			selector.trigger("previous-calendar");
+			$(document).trigger("previous-calendar");
 		})
 
 		selector.on("render", function(){
 			var rowAreaSize = $(window).height() - ($(".calendar-header").position().top + $(".calendar-header").height()),
 				rowCount = $(this).find(".calendar-row").length,
 				rowHeight = rowAreaSize/rowCount;
-
+			$("document").trigger("calendar-render");
 			$(this).find(".calendar-row").css("height", rowHeight);
 		})
 
 		selector.html(jQueryCalendar.generateHTML().getHTML()).trigger("render");
+		selector.trigger("calendar-rendered");
 
 		return selector;
 	}
